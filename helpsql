@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS horizon;
+USE horizon;
+
+CREATE TABLE IF NOT EXISTS guys (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) UNIQUE NOT NULL,
+    parol VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS my_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    value VARCHAR(255) NOT NULL,
+    user_login VARCHAR(50) NOT NULL
+);
+
+-- Пароль должен быть не менее 6 символов (по требованиям регистрации)
+INSERT INTO guys (login, parol) VALUES ('admin', '123456');
+INSERT INTO guys (login, parol) VALUES ('test', 'test123');
+INSERT INTO guys (login, parol) VALUES ('user', 'user123');
